@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "library_management_system"

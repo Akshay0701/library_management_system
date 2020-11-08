@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "170405284458",
+    "firebase_url": "https://library-management-syste-d7539.firebaseio.com",
+    "project_id": "library-management-syste-d7539",
+    "storage_bucket": "library-management-syste-d7539.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170405284458:android:ac4d94b4db190ce6545813",
+        "android_client_info": {
+          "package_name": "com.example.library_management_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170405284458-ubch16l9ig54qoprirjv8q31ai9b84o8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwgaLoSoSOEqN0vGSHtMQJaYIFkCCgea8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170405284458-ubch16l9ig54qoprirjv8q31ai9b84o8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

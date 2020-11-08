@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    android:id="@+id/sample"
+    app:cardBackgroundColor="#000"
+    android:layout_height="200dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:src="@mipmap/ic_launcher_round"
+        android:scaleType="fitXY"
+        android:layout_height="match_parent"></ImageView>
+</androidx.cardview.widget.CardView>

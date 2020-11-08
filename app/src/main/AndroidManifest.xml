@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.library_management_system">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Admin.Issued_Books" />
+        <activity android:name=".Admin.IssueRequestDetails" />
+        <activity android:name=".Admin.Update_Book_Detail" />
+        <activity android:name=".Admin.Request_New_Books" />
+        <activity android:name=".Admin.Request_Issue_Books" />
+        <activity android:name=".Admin.Remove_Books" />
+        <activity android:name=".Admin.Update_Books" />
+        <activity android:name=".Admin.View_Books" />
+        <activity android:name=".Admin.Add_Books" />
+        <activity android:name=".Admin.AdminDashBorad" />
+        <activity android:name=".Admin.adminLogin" />
+        <activity android:name=".User.BookDetails" />
+        <activity
+            android:name=".User.HomePage"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".User.userRegister">
+        </activity>
+        <activity android:name=".User.UserLogin" />
+    </application>
+
+</manifest>
