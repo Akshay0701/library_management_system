@@ -7,13 +7,16 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.library_management_system.Adapter.CustomGrid;
 import com.example.library_management_system.Model.Book;
 import com.example.library_management_system.Model.IssueRequest;
 import com.example.library_management_system.R;
@@ -37,6 +40,8 @@ public class BookDetails extends AppCompatActivity {
 
     LinearLayout requestBox;
 
+    GridView gridView;
+    Book book;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +49,8 @@ public class BookDetails extends AppCompatActivity {
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
         assert bundle != null;
-        final Book book = (Book) bundle.getSerializable("BookObject");
-
+        book = (Book) bundle.getSerializable("BookObject");
+        gridView=(GridView)findViewById(R.id.gridview);
         bookLocation=findViewById(R.id.bookLocation);
         bookAvai=findViewById(R.id.bookAvai);
         bookAuthor=findViewById(R.id.bookAuthor);
@@ -55,7 +60,7 @@ public class BookDetails extends AppCompatActivity {
         numberOfBooks=findViewById(R.id.numberOfBooks);
         user_requestBtn=findViewById(R.id.user_requestBtn);
         requestBox=findViewById(R.id.requestBox);
-        imgLocation=findViewById(R.id.imgLocation);
+//        imgLocation=findViewById(R.id.imgLocation);
 
         if(book.getAvailable().equals("No")){
             requestBox.setVisibility(View.GONE);
@@ -68,12 +73,15 @@ public class BookDetails extends AppCompatActivity {
         bookName.setText("Book Name : "+book.getName());
         bookId.setText("Book Id : "+book.getbId());
         Picasso.get().load(book.getImageUrl()).into(img);
-        //setting location img
-        Resources res = getResources();
-        String mDrawableName = "location"+book.getLocation();
-        int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
-        Drawable drawable = res.getDrawable(resID );
-        imgLocation.setImageDrawable(drawable);
+//        //setting location img
+//        Resources res = getResources();
+//        String mDrawableName = "location"+book.getLocation();
+//        int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
+//        Drawable drawable = res.getDrawable(resID );
+//        imgLocation.setImageDrawable(drawable);
+
+        //set girdview to show location of book
+        setlocation();
 
         //init firebase
         firebaseDatabase=FirebaseDatabase.getInstance();
@@ -90,6 +98,18 @@ public class BookDetails extends AppCompatActivity {
                     databaseReference.child(mUid).setValue(issueRequest);
                     Toast.makeText(BookDetails.this, "Request Sended", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+    }
+
+    private void setlocation() {
+        CustomGrid adapter = new CustomGrid(BookDetails.this, book.getLocation(), 12);
+        gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+//                Toast.makeText(BookDetails.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
             }
         });
     }

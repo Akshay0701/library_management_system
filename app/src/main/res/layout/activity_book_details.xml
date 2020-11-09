@@ -114,8 +114,17 @@
                     android:id="@+id/imgLocation"
                     android:layout_width="300dp"
                     android:layout_margin="20dp"
+                    android:visibility="gone"
                     android:layout_gravity="center"
                     android:layout_height="200dp"></ImageView>
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:numColumns="4"
+                    android:layout_margin="20dp"
+                    android:minHeight="300dp"
+                    android:layout_height="300dp"></GridView>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
